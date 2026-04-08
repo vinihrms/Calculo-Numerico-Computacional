@@ -1,18 +1,20 @@
 clear();    // Limpa as variáveis
 
 // Exibe título do método
-printf("\n\n*** APROXIMAÇÃO PELO MÉTODO DA SECANTE***\n\n")
+printf("\n\n*** APROXIMAÇÃO PELO MÉTODO DA SECANTE***\n")
+printf("\n\n*** FUNÇÃO x² + ln(x) ***\n\n")
 
-// Define a função f(x) = x^3 - 9x + 3
-deff('y = f(x)', 'y = x^3 - 9*x + 3')
+
+// Define a função
+deff('y = f(x)', 'y=x^2 + log(x)') // define a função f(x)
 
 // Aproximações iniciais
-x0_anterior = 0.0 // x_{k-1}
+x0_anterior = 0.5 // x_{k-1}
 x1_anterior = 1.0 // x_k
 
 // Critérios de parada
-epsilon1 = 1e-6 // Tolerância para diferença entre aproximações
-epsilon2 = 1e-6 // Tolerância para valor da função
+epsilon1 = 1e-5 // Tolerância para diferença entre aproximações
+epsilon2 = 1e-5 // Tolerância para valor da função
 k = 0           // Contador de iterações
 nmax = 100      // Número máximo de iterações
 
