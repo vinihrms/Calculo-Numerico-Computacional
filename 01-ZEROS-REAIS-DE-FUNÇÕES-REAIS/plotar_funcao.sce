@@ -11,7 +11,7 @@ h = gce() // obtém o manupulador do objeto gráfico atual (a linha plotada)
 
 //line.handle - define os ajustes de linha
 line_handle = h.children //h.children é o manipulador da linha
-line_handle.thickness = 4 // ajusta a espessura da linha
+line_handle.thickness = 2 // ajusta a espessura da linha
 line_handle.line_mode = 1 // ajusta a espessura da linha
 line_handle.foreground = color('blue') // especifica a cor da linha
 

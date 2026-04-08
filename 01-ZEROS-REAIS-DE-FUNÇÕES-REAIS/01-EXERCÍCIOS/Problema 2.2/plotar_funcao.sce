@@ -1,10 +1,11 @@
 clear();clf() //limpa as variaveis e o graficoz 
 
 printf("\n *** MÉTODO GRÁFICO PARA ISOLAR AS RAÍZES DA FUNÇÃO ***\n")
-printf("\n\n*** FUNÇÃO X² - 3 ***\n\n")
+printf("\n *** EXEMPLO COM A FUNÇÃO PADRÃO ***\n")
 
-x = -3:0.1:3
-y = x.^2-3
+x = 0:0.1:1
+y=exp(-x) - sin(x)
+
 
 plot2d(x, y)
 h = gce() // obtém o manupulador do objeto gráfico atual (a linha plotada)
@@ -15,8 +16,8 @@ line_handle.thickness = 2 // ajusta a espessura da linha
 line_handle.line_mode = 1 // ajusta a espessura da linha
 line_handle.foreground = color('blue') // especifica a cor da linha
 
-xtitle("Localização das raízes: gráfico de f(x) = x^2 - 3", ... // ... quebra a linha
-        "Valores do domínio [-2, 2]", ...
+xtitle("Localização das raízes: gráfico de f(x) = exp(-x) - sin(x)", ... // ... quebra a linha
+        "Valores do domínio [-1, 2]", ...
         "Valores da função f(x) = y")
 
 a = gca() //obtém o manipulador dos eixos atuais
