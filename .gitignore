@@ -1,1 +1,3 @@
+# Ignorar todos os arquivos temporários que terminam com ~ em todos os diretórios
+*~
 **/.vscode/
