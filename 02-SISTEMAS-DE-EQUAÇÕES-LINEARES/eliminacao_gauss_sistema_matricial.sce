@@ -1,8 +1,8 @@
 clear();
 
 
-printf("\n********** Triangularizacao **********\n\n")
-printf(" Geração de Matriz Triangular Superior\n")
+printf("\n********** Eliminação de Gauss **********\n\n")
+printf("Geração de Matriz Triangular Superior\n")
 
 // ---------- EXEMPLO 3.1 ----------
 // Dados de entrada - Matriz dos coef. e vetor solucao...
