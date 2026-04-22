@@ -34,6 +34,11 @@ printf("\n********** Triangularizacao **********:\n")
 // Algoritmo de triangularizacao
 n = length(B)
 for k = (1:n-1)
+        if A(k, k) == 0
+                printf("\n Erro: Elemento pivô é zero. O método de eliminação de Gauss falhou.\n")
+                exit(1)
+        end
+
         for i = (k+1:n)
                 m = A(i, k)/A(k, k)
                 A(i, k) = 0
