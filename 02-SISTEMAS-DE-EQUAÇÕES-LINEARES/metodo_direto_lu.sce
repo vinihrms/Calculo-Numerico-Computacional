@@ -130,4 +130,4 @@ for i = 1:n
         end
     end
 end
-printf("\n****************Fim da Decomposição LU - Crout****************\n");
+printf("\n**************** Fim da Decomposição LU - Crout ****************\n");
