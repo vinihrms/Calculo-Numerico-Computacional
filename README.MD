@@ -23,3 +23,35 @@ Nesta pasta estão os códigos que contemplam os métodos de encontrar zeros de 
 - Fórmula:  
   $x_{k+1} = x_k - f(x_k) \cdot \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}$
 - Sem derivada, usa dois pontos anteriores para estimar a próxima raiz.
+
+## 02-SISTEMAS-DE-EQUAÇÕES-LINEARES
+Nesta pasta estão os códigos que contemplam métodos para resolver sistemas lineares. São eles:
+
+### 1. Eliminação de Gauss (Sistema Matricial)
+- Conceito: Transforma a matriz aumentada $[A\;|\;b]$ em uma forma triangular superior por operações elementares sobre as linhas, seguida de substituição retroativa para obter $x$.
+- Passo chave (coeficiente de eliminação): $m_{ik} = \dfrac{a_{ik}}{a_{kk}}$.
+
+### 2. Decomposição LU (Método Direto)
+- Conceito: Fatora $A$ em $L U$ onde $L$ é triangular inferior e $U$ triangular superior. Resolve-se primeiro $L y = b$ (substituição direta) e depois $U x = y$ (substituição retroativa).
+- Fatoração: $A = L U$.
+
+### 3. TDMA (Algoritmo de Thomas / Método Direto para Tridiagonais)
+- Conceito: Método eficiente para sistemas tridiagonais que realiza um "forward sweep" e uma "back substitution" com custo linear.
+- Recorrências (notação comum para coeficientes subdiag, diag, supdiag e RHS):
+  - $c'_i = \dfrac{c_i}{b_i - a_i c'_{i-1}}$
+  - $d'_i = \dfrac{d_i - a_i d'_{i-1}}{b_i - a_i c'_{i-1}}$
+  - Retro-substituição: $x_n = d'_n$, $x_i = d'_i - c'_i x_{i+1}$.
+
+### 4. Método de Gauss-Seidel (Iterativo)
+- Fórmula:  
+  $x_i^{(k+1)} = \dfrac{1}{a_{ii}}\left(b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} - \sum_{j=i+1}^{n} a_{ij} x_j^{(k)}\right)$
+- Utiliza valores mais recentes dentro da iteração (mais rápido que Jacobi em muitos casos), convergência depende de propriedades da matriz (ex.: diagonal dominante).
+
+### 5. Método de Jacobi (Iterativo)
+- Fórmula:  
+  $x_i^{(k+1)} = \dfrac{1}{a_{ii}}\left(b_i - \sum_{j \neq i} a_{ij} x_j^{(k)}\right)$
+- Método simples e paralelizável; cada componente da próxima iteração usa apenas valores da iteração anterior.
+
+### Arquivos auxiliares
+- `plot_funcao.sce`: scripts de apoio para plotagem e verificação visual de soluções e funções relacionadas.
+
