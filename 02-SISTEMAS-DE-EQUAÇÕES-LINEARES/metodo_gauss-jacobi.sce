@@ -21,7 +21,7 @@ disp(B);
 n = length(B);          // Dimensão sistema quadrado
 Nmax = 100              // Número máximo de iterações
 epsilon = 1.0e-6        // Torerância
-X0 = [0; 0; 0; 0];      // Aproximação inicial
+X0 = [0; 0; 0; 0];      // Aproximação inicial (isso é algo que modifica conforme o vetor)
 X = X0;                 // Vetor solução iterativa
 T = A;                  // Cópia para verificação final
 
