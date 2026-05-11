@@ -5,10 +5,16 @@ printf("\n********** Método de Gauss-Jacobi **********\n\n")
 printf("Resolução iterativa de sistemas lineares\n")
 
 // Dados de entrada
-A = [1, 10, 3;
-     4, 0, 1;
-     2, 1, 4];
-B = [27; 6; 12];
+
+
+A = [-0.1, -0.2, 1, 0.2;
+     0.6, 3, -0.6, -0.3;
+     2, 1, -0.2, 0.2;
+     0.4, 1.2, -0.8, 4];
+B = [1, -7.8, 0.4, -10];
+
+
+
 
 printf("\n********** Dados de Entrada - Matriz A e Vetor B **********\n\n")
 printf("\n Entrada - Matriz A (original): ");
@@ -17,7 +23,7 @@ printf("\n Entrada - Vetor B (original): ")
 disp(B);
 
 n = length(B);          // Dimensão sistema quadrado
-Nmax = 100              // Número máximo de iterações
+Nmax = 1000              // Número máximo de iterações
 epsilon = 1.0e-6        // Torerância
 X0 = [0; 0; 0; 0];      // Aproximação inicial (isso é algo que modifica conforme o vetor)
 X = X0;                 // Vetor solução iterativa
@@ -85,4 +91,4 @@ for i = 1:n
     end
 end
 
-printf("\n**************** Fim do Método de Gauss-Jacobi ****************\n");
+printf("\n**************** Fim do Método de Gauss-Jacobi ****************");

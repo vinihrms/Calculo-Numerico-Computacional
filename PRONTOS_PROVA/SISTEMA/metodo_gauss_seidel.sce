@@ -1,14 +1,20 @@
 clear();
 
 
-printf("\n********** Método de Gauss-Jacobi **********\n\n")
+printf("\n********** Método de Gauss-Seidel **********\n\n")
 printf("Resolução iterativa de sistemas lineares\n")
 
 // Dados de entrada
-A = [1, 10, 3;
-     4, 0, 1;
-     2, 1, 4];
-B = [27; 6; 12];
+
+
+A = [0.1, 0.2, 1, 0.3;
+    0.3, 2, -0.3, -0.9;
+    4, 2, -0.3, 0.8;
+    0.6, 3.2, -1.8, 0.4];
+
+B = [4; 7.5; 4.4; 10];
+
+
 
 printf("\n********** Dados de Entrada - Matriz A e Vetor B **********\n\n")
 printf("\n Entrada - Matriz A (original): ");
@@ -32,26 +38,30 @@ end
 
 printf("\n********** Processo Iterativo **********\n\n")
 
-// Laço principal do met. iterativo de Gauss-Jacobi
-
+// Laço principal do met. iterativo de Gauss-Seidel
 convergiu = %f;
 for k = 1:Nmax
+    X = X0; // inicia a iteração corrente com os valores anteriores
     for i = 1:n
-        S = 0;
-        for j = 1:n
-            if i ~= j then
-                S = S + A(i,j) * X0(j);
-            end
+        S1 = 0;
+        for j = 1:i-1
+            S1 = S1 + A(i,j) * X(j);
         end
-        X(i) = (B(i) - S) / A(i, i);
+        S2 = 0;
+        for j = i+1:n
+            S2 = S2 + A(i,j) * X(j);
+        end
+        X(i) = (B(i) - S1 - S2) / A(i,i);
     end
 
-    erro = max(abs(X - X0));
+    erro = max(abs(X-X0));
     if erro < epsilon then
-        convergiu = %t
-        break
+        convergiu = %t;
+        break;
     end
+
     X0 = X;
+
 end
 
 printf("\nNúmero de iterações: ");
@@ -83,6 +93,6 @@ for i = 1:n
             printf("%.3f\n", s)
         end
     end
-end
+end 
 
-printf("\n**************** Fim do Método de Gauss-Jacobi ****************\n");
+printf("\n**************** Fim do Método de Gauss-Seidel ****************");

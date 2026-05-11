@@ -5,12 +5,10 @@ printf("\n********** Método de Gauss-Seidel **********\n\n")
 printf("Resolução iterativa de sistemas lineares\n")
 
 // Dados de entrada
-A = [4.0, 2.0, -0.3, 0.8;
-    0.6, 3.2, -1.8, 0.4;
-    0.1, 0.2, 1.0, 0.3;
-    0.3, -0.8, -0.3, -0.9];
-
-B = [4.4; 10.0; 4.0; 7.5];
+A = [1, 10, 3;
+     4, 0, 1;
+     2, 1, 4];
+B = [27; 6; 12];
 
 printf("\n********** Dados de Entrada - Matriz A e Vetor B **********\n\n")
 printf("\n Entrada - Matriz A (original): ");

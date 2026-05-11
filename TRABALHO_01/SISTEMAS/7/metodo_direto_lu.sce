@@ -1,16 +1,21 @@
 clear();
 
 
-printf("\n********** Método de Decomposição LU - Crout **********\n\n")
-printf("Resolução direta de Sistemas de Equações Lineares\n")
+printf("\n********** Método de Decomposição LU - Crout **********\n")
 
 // ---------- EXEMPLO 3.1 ----------...
-printf("\n**********  Dados de entrada - Matriz dos coef. e vetor solucao **********\n\n")
+printf("\n**********  Dados de entrada - Matriz dos coef. e vetor solucao **********\n")
 
-A = [1, 10, 3;
-     4, 0, 1;
-     2, 1, 4];
-B = [27; 6; 12];
+// Dados de entrada
+A = [-0.1, -0.2, 1, 0.2;
+     0.6, 3, -0.6, -0.3;
+     2, 1, -0.2, 0.2;
+     0.4, 1.2, -0.8, 4];
+B = [1, -7.8, 0.4, -10];
+
+
+
+
 
 T = A; // Guarda a matriz original para verificação
 
@@ -61,12 +66,12 @@ for j = 1:n
 
 end
 
-printf("\n .....Matriz L (triangulação inferior).....:\n")
+printf("\n .....Matriz L (triangulação inferior).....")
 disp(L)
-printf("\n .....Matriz U (triangulação superior).....:\n")
+printf("\n .....Matriz U (triangulação superior).....")
 disp(U)
 
-printf("\n .....Substituição progressiva.....:\n")
+printf("\n .....Substituição progressiva.....")
 
 // Resolução de Ly = B por substituição progressiva
 Y = zeros(n,1);
@@ -90,10 +95,10 @@ for i = 2:n
     Y(i) = (B(i) - SomaLY)/L(i,i);
 end
  
-printf("\n .....Vetor Y (solução de Ly=B).....:\n")
+printf("\n .....Vetor Y (solução de Ly=B).....")
 disp(Y)
 
-printf("\n .....Substituição regressiva.....:\n")
+printf("\n .....Substituição regressiva.....")
 
 // Resolução de Ux = Y por substituição regressiva
 X = zeros(n,1);
@@ -127,4 +132,4 @@ for i = 1:n
         end
     end
 end
-printf("\n**************** Fim da Decomposição LU - Crout ****************\n");
+printf("\n**************** Fim da Decomposição LU - Crout ****************");

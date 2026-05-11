@@ -2,25 +2,29 @@ clear();
 
 
 printf("\n********** Método GULOSO de Gauss-Jacobi **********\n\n")
-printf("Resolução iterativa de sistemas lineares\n")
 
 // Dados de entrada
-A = [1, 10, 3;
-     4, 0, 1;
-     2, 1, 4];
-B = [27; 6; 12];
 
 
-printf("\n********** Dados de Entrada - Matriz A e Vetor B **********\n\n")
-printf("\n Entrada - Matriz A (original): \n");
+A = [1, 9, 2;
+    10, 1, 2;
+    1, 0, 5];
+
+
+B = [170; 180; 140];
+
+
+
+printf("********** Dados de Entrada - Matriz A e Vetor B **********\n")
+printf("Entrada - Matriz A (original):");
 disp(A);
-printf("\n Entrada - Vetor B (original): \n")
+printf("\nEntrada - Vetor B (original):")
 disp(B);
 
 n = length(B);          // Dimensão sistema quadrado
 Nmax = 100              // Número máximo de iterações
 epsilon = 1.0e-6        // Torerância
-X0 = [0; 0; 0; 0];      // Aproximação inicial (isso é algo que modifica conforme o vetor)
+X0 = [0; 0; 0];      // Aproximação inicial (isso é algo que modifica conforme o vetor)
 X = X0;                 // Vetor solução iterativa
 T = A;                  // Cópia para verificação final
 
@@ -56,16 +60,16 @@ function [A_greedy, B_greedy, sucesso, ordem] = reordenar_greedy(A,B)
 endfunction
 
 //.......................
-printf("\n********** Reordenação Gulosa **********\n\n")
+printf("\n********** Reordenação Gulosa **********\n")
 [A, B, sucesso, ordem_linhas] = reordenar_greedy(A,B);
 
 if sucesso then
-  printf("\n Reordenação gulosa aplicada com sucesso.\n");
-  printf("\n Ordem das linhas escolhida:\n");
+  printf("Reordenação gulosa aplicada com sucesso.");
+  printf("Ordem das linhas escolhida:");
   disp(ordem_linhas');
-  printf("\n Saída - Matriz A (reordenada) \n");
+  printf("\nSaída - Matriz A (reordenada)");
   disp(A);
-  printf("\n Saída - Matriz B (reordenada) \n");
+  printf("\nSaída - Matriz B (reordenada)");
   disp(B);
 else
   error("ERRO: não foi possível aplicar a reordenação gulosa.");
@@ -80,7 +84,7 @@ end
 
 
 //processo padrao
-printf("\n********** Processo Iterativo **********\n\n")
+printf("\n********** Processo Iterativo **********")
 
 convergiu = %f;
 
@@ -105,23 +109,22 @@ for k = 1:Nmax
     X0 = X;
 end
 
-printf("\nNúmero de iterações: ");
-disp(k);
+printf("\nNúmero de iterações: %d\n", k);
 
-printf("\nErro final: %.6e\n", erro);
+printf("Erro final: %.6e\n", erro);
 
 if convergiu then
-    printf("\n O método convergiu dentro da tolerância estabelecida.\n")
+    printf("\nO método convergiu dentro da tolerância estabelecida.\n")
 else
-    printf("\n ATENÇÃO: o método atingiu o número máximo de iterações sem convergir.\n")
+    printf("\nATENÇÃO: o método atingiu o número máximo de iterações sem convergir.\n")
 end
 
 
-printf("\n Vetor solução do sistema:\n")
+printf("\nVetor solução do sistema:\n")
 mprintf("   %.6f\n", X)
 
 
-printf("\n********** Verificação da solução, se AX = B **********\n\n")
+printf("\n********** Verificação da solução, se AX = B **********\n")
 // verifiação
 for i = 1:n
     s = 0;
@@ -136,4 +139,4 @@ for i = 1:n
     end
 end
 
-printf("\n**************** Fim do Método de Gauss-Jacobi ****************\n");
+printf("\n**************** Fim do Método de Gauss-Jacobi ****************");

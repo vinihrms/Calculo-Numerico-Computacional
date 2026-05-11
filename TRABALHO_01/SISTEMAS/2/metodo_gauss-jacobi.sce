@@ -5,10 +5,18 @@ printf("\n********** Método de Gauss-Jacobi **********\n\n")
 printf("Resolução iterativa de sistemas lineares\n")
 
 // Dados de entrada
-A = [1, 10, 3;
-     4, 0, 1;
-     2, 1, 4];
-B = [27; 6; 12];
+
+
+A = [1, 9, 2;
+    10, 1, 2;
+    1, 0, 5];
+
+
+B = [170; 180; 140];
+
+
+
+
 
 printf("\n********** Dados de Entrada - Matriz A e Vetor B **********\n\n")
 printf("\n Entrada - Matriz A (original): ");
@@ -85,4 +93,4 @@ for i = 1:n
     end
 end
 
-printf("\n**************** Fim do Método de Gauss-Jacobi ****************\n");
+printf("\n**************** Fim do Método de Gauss-Jacobi ****************");

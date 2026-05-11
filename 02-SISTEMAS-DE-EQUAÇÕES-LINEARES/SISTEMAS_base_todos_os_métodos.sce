@@ -11,22 +11,25 @@ printf("\n\n------------ Eliminação de Gauss ------------\n\n")
 
 
 // DECLARAÇÃO DE MATRIZES
+/*
 //letra A
 A = [1, 1, 1;
      2, 1, -1;
      2, 2, 1];
 B = [1; 0; 1];
 T = A
-dimensao = size(A)
 
-/*
+*/
 //letra B
 A = [1, 10, 3;
      4, 0, 1;
      2, 1, 4];
 B = [27; 6; 12];
-T = A
 
+T = A
+dimensao = size(A)
+
+/*
 //letra C
 A = [20, -5, 0, 0;
      -5, 15, -5, 0;
