@@ -5,7 +5,7 @@
 //     X: vetor com as abscissas dos nós de interpolação (x 1)
 //     Y: vetor com os valores da função nos nós (y (y_1 - f(x_i))
 // Saídas:
-//      Pollagrange : polinômio interpolador completo (objeto do tipo 'poly')
+//      PolLagrange : polinômio interpolador completo (objeto do tipo 'poly')
 //      Baselagrange : lista com os n polinômios de base L_i (x) de Lagrange (objetos do tipo 'poly'), para i - 0,...,n-1
 // Observaçõoes: O polinômio interpolador obtido é P_n(x) = soma[L_i(x) * y_i ], i - 0, ..., n-1
 

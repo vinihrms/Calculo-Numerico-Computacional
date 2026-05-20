@@ -50,8 +50,8 @@ disp(Pol)
 
 
 // [5] Avaliação do Polinômio em um Ponto Específico
-pontos=[0.5]
-valores_ref=[%nan]
+pontos=[-0.5, 0.5]
+valores_ref=[%nan, %nan]
 
 // Avaliação ponto a ponto + funções de erro
 

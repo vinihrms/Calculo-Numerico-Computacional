@@ -14,10 +14,10 @@ function P = newton_poly(X, coef)
     n = length(X)
     x = poly(0, "x")        // Variável simbólica
     P = coef(1)             // Termo constante (a_0)
-    px = 1                  // Acumulador do produto (x - x_0) (x = x_1)
+    termo = 1               // Acumulador do produto (x - x_0) (x = x_1)
 
     for i = 2:n
-        px = px * (x - X(i-1))
-        P = P + coef(i) * px
+        termo = termo * (x - X(i - 1))
+        P = P + coef(i) * termo
     end
 endfunction
