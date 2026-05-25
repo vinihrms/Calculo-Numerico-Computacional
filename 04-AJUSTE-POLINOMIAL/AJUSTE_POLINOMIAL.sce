@@ -118,5 +118,5 @@ ORDEM = 1;
 // [7] GERAÇÃO DO GRÁFICO
 plotar_ajuste_polinomial(X, Y, Pol_ajuste);
 	
-printf("\n***** FIM DE AJUSTE POLINOMIAL *****\n")
+printf("\n***** FIM DE AJUSTE POLINOMIAL MQM *****\n")
 
