@@ -41,7 +41,7 @@ printf("\n[3] POLINÔMIO INTERPOLADOR POR NEWTON:")
 disp(PolNewton)
 
 // [3] Exibição do polinômio interpolador
-pontos=[-0.5, 0.5]
+pontos=[-0.5, 0.5] // PONTOS QUE QUERO ACHAR
 valores_ref=[%nan, %nan]
 
 // [4] Avaliação do polinômio em pontos específicos

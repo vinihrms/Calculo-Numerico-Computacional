@@ -17,9 +17,9 @@ function plotar_ajuste_polinomial(X, Y, Pol_ajuste)
 
     // [2] Curva ajustada e dados observados
     scf(0);
-    clf();
 
-    plot2d(xx, yy, style = [color("blue")]);
+    // NOTA: removido 
+    plot2d(xx, yy, style = [color("red")]);
     h = gce();
     h.children.thickness = 4;
     plot2d(X, Y, -4)

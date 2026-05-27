@@ -1,6 +1,4 @@
 //AJUSTE POLINOMIAL POR MÍNIMOS QUADRADOS
-clear ();
-
 printf("\n********** AJUSTE POLINOMIAL POR MÍNIMOS QUADRADOS **********\n\n")
 
 // [0] Carregamento das Funções Modularizadas
@@ -25,7 +23,6 @@ Y = [2.0, 5.2, 3.8, 6.1, 5.8];
 // Y = [2.05, 1.153, 0.45, 0.4, 0.5, 0, 0.2, 0.6, 0.512, 1.2, 2.05];
 
 // [2] Impressao da tabela de dados
-
 
 printf("\n[1] TABELA DE DADOS UTILIZADA NO AJUSTE:\n")
 for i = 1 : length(X)

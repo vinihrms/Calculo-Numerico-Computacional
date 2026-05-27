@@ -16,8 +16,8 @@ exec(caminho + "03_avaliar_polinomios.sce", -1);
 exec(caminho + "04_plotar_interpolador.sce", -1);
 
 // [1] Entrada de Dados
-X = [-1, 0, 2];
-Y = [4, 1, -1];
+X = [10, 20, 50, 100];
+Y = [900, 450, 180, 90];
 
 
 n = length(X)           // Número de pontos 
@@ -38,8 +38,8 @@ for i = 1:n
 end
 
 // [3] Exibição do polinômio interpolador
-pontos=[-0.5, 0.5] // PONTOS QUE QUERO ACHAR
-valores_ref=[%nan, %nan]
+pontos=[30, 75, 13, 11, 22] // PONTOS QUE QUERO ACHAR
+valores_ref=[%nan, %nan, %nan, %nan, %nan] // COLOCAR %nan A QUANTIA DE PONTOS
 
 printf("\n[3] POLINÔMIO INTERPOLADOR POR LANGRANGE:")
 disp(PolLagrange)
